@@ -1,0 +1,105 @@
+body {
+  padding: 0 0 80px;
+}
+
+.cell-name {
+  width: 220px;
+  min-width: 180px;
+}
+
+.row-num {
+  font-family: 'Syne', sans-serif;
+  font-size: 11px;
+  color: var(--muted);
+  margin-bottom: 4px;
+  letter-spacing: 0.06em;
+}
+
+.test-name {
+  font-family: 'Syne', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+}
+
+.test-en {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 2px;
+  font-style: italic;
+}
+
+.cell-cat { 
+  width: 130px; 
+  min-width: 110px; 
+}
+
+.cat-tag {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 2px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.cat-functional  { 
+  background: #dbeafe; 
+  color: #1e40af; 
+}
+
+.cat-nonfunctional { 
+  background: #fef3c7; 
+  color: #92400e; 
+}
+
+.cat-structural  { 
+  background: #f3e8ff; 
+  color: #6b21a8; 
+}
+
+.cat-regression  { 
+  background: #dcfce7; 
+  color: #166534; 
+}
+
+.cat-maintenance { 
+  background: #fce7f3; 
+  color: #9d174d; 
+}
+
+.cell-def { 
+  min-width: 200px; 
+  color: #333; 
+}
+
+.cell-goal { 
+  min-width: 160px; 
+  color: #444; 
+  font-weight: 300; 
+}
+
+.cell-example {
+  min-width: 220px;
+  background: rgba(15,17,23,0.02);
+}
+
+.example-scenario {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+}
+
+.example-text {
+  font-size: 13px;
+  color: var(--ink);
+  line-height: 1.5;
+  border-left: 2.5px solid var(--accent);
+  padding-left: 10px;
+}

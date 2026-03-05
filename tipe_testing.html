@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tipe-Tipe Testing - QA</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles/global.css">
+<link rel="stylesheet" href="styles/components.css">
+<link rel="stylesheet" href="styles/tipe-testing.css">
+</head>
+<body>
+
+<header>
+  <div class="header-label">Software Quality Assurance — Reference Sheet</div>
+  <h1>Tipe-Tipe Testing</h1>
+  <p>Panduan lengkap jenis-jenis pengujian perangkat lunak, beserta definisi, tujuan, dan contoh konkret untuk setiap tipenya.</p>
+  <div class="header-stats">
+    <div class="stat"><span class="stat-num">22</span><span class="stat-label">Tipe Testing</span></div>
+    <div class="stat"><span class="stat-num">5</span><span class="stat-label">Kategori</span></div>
+    <div class="stat"><span class="stat-num">22</span><span class="stat-label">Contoh Konkret</span></div>
+  </div>
+</header>
+
+<div class="filter-bar">
+  <span class="filter-label">Filter:</span>
+  <button class="filter-btn active" data-cat="all">Semua</button>
+  <button class="filter-btn" data-cat="functional">Functional</button>
+  <button class="filter-btn" data-cat="nonfunctional">Non-Functional</button>
+  <button class="filter-btn" data-cat="structural">Structural</button>
+  <button class="filter-btn" data-cat="regression">Regression</button>
+  <button class="filter-btn" data-cat="maintenance">Maintenance</button>
+  <span class="count-badge"><span id="row-count">22</span> tipe ditampilkan</span>
+</div>
+
+<div class="table-wrap">
+<table id="main-table">
+  <thead>
+    <tr>
+      <th>Tipe Testing</th>
+      <th>Kategori</th>
+      <th>Definisi</th>
+      <th>Tujuan Utama</th>
+      <th>Contoh Konkret</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <!-- ── FUNCTIONAL ── -->
+    <tr data-cat="functional">
+      <td class="cell-name"><div class="row-num">01</div><div class="test-name">Unit Testing</div><div class="test-en">Unit Test</div></td>
+      <td class="cell-cat"><span class="cat-tag cat-functional">Functional</span></td>
+      <td class="cell-def">Pengujian pada unit terkecil kode (fungsi, method, atau class) secara terisolasi dari komponen lain.</td>
+      <td class="cell-goal">Memastikan setiap unit kode bekerja sesuai logikanya sendiri.</td>
+      <td class="cell-example"><div class="example-scenario">Contoh</div><div class="example-text">Fungsi <code>hitungDiskon(harga, persen)</code> ditest dengan input harga=100.000 dan persen=20 — expected output: 80.000.</div></td>
+    </tr>
+
+    <tr data-cat="functional">
+      <td class="cell-name"><div class="row-num">02</div><div class="test-name">Integration Testing</div><div class="test-en">Integration Test</div></td>
+      <td class="cell-cat"><span class="cat-tag cat-functional">Functional</span></td>
+      <td class="cell-def">Pengujian interaksi antara dua atau lebih modul/komponen yang digabungkan.</td>
+      <td class="cell-goal">Memastikan modul-modul bekerja dengan benar saat dihubungkan satu sama lain.</td>
+      <td class="cell-example"><div class="example-scenario">Contoh</div><div class="example-text">Modul Login dihubungkan dengan modul Database — test memverifikasi bahwa data user berhasil diambil dari DB saat login.</div></td>
+    </tr>
+
+    <tr data-cat="functional">
+      <td class="cell-name"><div class="row-num">03</div><div class="test-name">System Testing</div><div class="test-en">System Test</div></td>
+      <td class="cell-cat"><span class="cat-tag cat-functional">Functional</span></td>
+      <td class="cell-def">Pengujian pada keseluruhan sistem yang sudah terintegrasi sebagai satu kesatuan.</td>
+      <td class="cell-goal">Memastikan sistem memenuhi semua functional requirement yang telah ditentukan.</td>
+      <td class="cell-example"><div class="example-scenario">Contoh</div><div class="example-text">User melakukan alur lengkap: registrasi → login → tambah produk ke cart → checkout → pembayaran — semua proses diverifikasi end-to-end.</div></td>
+    </tr>
+
+    <tr data-cat="functional">
+      <td class="cell-name"><div class="row-num">04</div><div class="test-name">Acceptance Testing</div><div class="test-en">UAT / Acceptance</div></td>
+      <td class="cell-cat"><span class="cat-tag cat-functional">Functional</span></td>
+      <td class="cell-def">Pengujian oleh user atau client untuk memvalidasi apakah sistem memenuhi kebutuhan bisnis mereka.</td>
+      <td class="cell-goal">Mendapatkan persetujuan user/client bahwa sistem siap digunakan di production.</td>
+      <td class="cell-example"><div class="example-scenario">Contoh</div><div class="example-text">Tim finance client menguji fitur laporan keuangan bulanan — mereka memvalidasi apakah data dan format laporan sesuai kebutuhan mereka.</div></td>
+    </tr>
+
+    <tr data-cat="functional">
+      <td class="cell-name"><div class="row-num">05</div><div class="test-name">Smoke Testing</div><div class="test-en">Build Verification</div></td>
+      <td class="cell-cat"><span class="cat-tag cat-functional">Functional</span></td>
+      <td class="cell-def">Pengujian cepat untuk memverifikasi apakah build terbaru stabil dan layak untuk dilanjutkan ke testing yang lebih dalam.</td>
+      <td class="cell-goal">Mendeteksi masalah kritis sejak awal sebelum membuang waktu untuk full testing.</td>
+      <td class="cell-example"><div class="example-scenario">Contoh</div><div class="example-text">Setelah build baru dirilis, QA mengecek: apakah aplikasi bisa dibuka? apakah login berfungsi? apakah halaman utama bisa diakses? — jika gagal, build dikembalikan ke developer.</div></td>
+    </tr>
+
+    <tr data-cat="functional">
+      <td class="cell-name"><div class="row-num">06</div><div class="test-name">Sanity Testing</div><div class="test-en">Sanity Check</div></td>
+      <td class="cell-cat"><span class="cat-tag cat-functional">Functional</span></td>
+      <td class="cell-def">Pengujian cepat untuk memverifikasi bahwa bug tertentu sudah difix atau fitur baru bekerja sesuai ekspektasi.</td>
+      <td class="cell-goal">Memastikan perubahan spesifik sudah benar sebelum melakukan full regression.</td>
+      <td class="cell-example"><div class="example-scenario">Contoh</div><div class="example-text">Developer fix bug "harga tidak tampil di halaman detail produk" — QA langsung mengecek halaman tersebut untuk memverifikasi fix sudah benar.</div></td>
+    </tr>
+
+    <tr data-cat="functional">
+      <td class="cell-name"><div class="row-num">07</div><div class="test-name">Functional Testing</div><div class="test-en">Feature Test</div></td>
+      <td class="cell-cat"><span class="cat-tag cat-functional">Functional</span></td>
+      <td class="cell-def">Pengujian yang memverifikasi apakah setiap fitur sistem bekerja sesuai dengan spesifikasi requirement.</td>
+      <td class="cell-goal">Memastikan semua fungsi yang dijanjikan dalam requirement dapat berjalan dengan benar.</td>
+      <td class="cell-example"><div class="example-scenario">Contoh</div><div class="example-text">Fitur filter produk berdasarkan kategori ditest — QA memilih "Elektronik" dan memverifikasi bahwa hanya produk elektronik yang ditampilkan di hasil pencarian.</div></td>
+    </tr>
+
+    <tr data-cat="functional">
+      <td class="cell-name"><div class="row-num">08</div><div class="test-name">API Testing</div><div class="test-en">API Test</div></td>
+      <td class="cell-cat"><span class="cat-tag cat-functional">Functional</span></td>
+      <td class="cell-def">Pengujian langsung pada API (endpoint, request/response, status code, dan data) tanpa melalui UI.</td>
+      <td class="cell-goal">Memastikan API mengembalikan data yang benar, response code yang tepat, dan menangani error dengan baik.</td>
+      <td class="cell-example"><div class="example-scenario">Contoh</div><div class="example-text">POST /api/orders dikirim dengan body yang valid — QA memverifikasi response 201 Created, ID order terbuat, dan data order tersimpan di database.</div></td>
+    </tr>
+
+    <tr data-cat="functional">
+      <td class="cell-name"><div class="row-num">09</div><div class="test-name">UI Testing</div><div class="test-en">Interface Test</div></td>
+      <td class="cell-cat"><span class="cat-tag cat-functional">Functional</span></td>
+      <td class="cell-def">Pengujian pada antarmuka pengguna — mencakup tampilan, interaksi, dan navigasi di browser atau aplikasi.</td>
+      <td class="cell-goal">Memastikan UI berfungsi dengan benar, responsif, dan sesuai dengan desain yang disepakati.</td>
+      <td class="cell-example"><div class="example-scenario">Contoh</div><div class="example-text">QA memverifikasi bahwa form pendaftaran: label terbaca jelas, validasi muncul saat input kosong, dan tombol Submit aktif hanya setelah semua field diisi.</div></td>
+    </tr>
+
+    <tr data-cat="functional">
+      <td class="cell-name"><div class="row-num">10</div><div class="test-name">Exploratory Testing</div><div class="test-en">Ad-hoc Explore</div></td>
+      <td class="cell-cat"><span class="cat-tag cat-functional">Functional</span></td>
+      <td class="cell-def">Pengujian tanpa test case yang sudah ditentukan sebelumnya — QA bebas mengeksplorasi sistem menggunakan intuisi dan pengalaman.</td>
+      <td class="cell-goal">Menemukan bug yang tidak terpikir dalam test case formal, terutama edge case dan unexpected behavior.</td>
+      <td class="cell-example"><div class="example-scenario">Contoh</div><div class="example-text">QA mencoba login dengan karakter emoji di field password, copy-paste teks sangat panjang, dan double-click tombol Submit secara cepat — ditemukan bug: double-click menghasilkan 2 akun terdaftar.</div></td>
+    </tr>
+
+    <!-- ── NON-FUNCTIONAL ── -->
+    <tr data-cat="nonfunctional">
+      <td class="cell-name"><div class="row-num">11</div><div class="test-name">Performance Testing</div><div class="test-en">Perf Test</div></td>
+      <td class="cell-cat"><span class="cat-tag cat-nonfunctional">Non-Functional</span></td>
+      <td class="cell-def">Pengujian untuk mengukur kecepatan, stabilitas, dan skalabilitas sistem di bawah beban kerja tertentu.</td>
+      <td class="cell-goal">Memastikan sistem merespons cepat dan stabil sesuai dengan standar performa yang ditetapkan.</td>
+      <td class="cell-example"><div class="example-scenario">Contoh</div><div class="example-text">Halaman daftar produk harus load dalam &lt;2 detik dengan 100 produk — QA mengukur dengan tools dan melaporkan jika melebihi threshold.</div></td>
+    </tr>
+
+    <tr data-cat="nonfunctional">
+      <td class="cell-name"><div class="row-num">12</div><div class="test-name">Load Testing</div><div class="test-en">Load Test</div></td>
+      <td class="cell-cat"><span class="cat-tag cat-nonfunctional">Non-Functional</span></td>
+      <td class="cell-def">Pengujian perilaku sistem saat menerima beban user yang diharapkan dalam kondisi normal hingga puncak.</td>
+      <td class="cell-goal">Mengetahui batas kapasitas sistem dan memastikan sistem stabil di traffic normal maupun peak.</td>
+      <td class="cell-example"><div class="example-scenario">Contoh</div><div class="example-text">Simulasi 5.000 user mengakses aplikasi e-commerce bersamaan saat flash sale — QA memantau response time, error rate, dan CPU usage server.</div></td>
+    </tr>
+
+    <tr data-cat="nonfunctional">
+      <td class="cell-name"><div class="row-num">13</div><div class="test-name">Stress Testing</div><div class="test-en">Stress Test</div></td>
+      <td class="cell-cat"><span class="cat-tag cat-nonfunctional">Non-Functional</span></td>
+      <td class="cell-def">Pengujian sistem di luar batas kapasitas normal untuk melihat bagaimana sistem berperilaku dan apakah bisa pulih.</td>
+      <td class="cell-goal">Mengetahui titik kegagalan sistem (breaking point) dan kemampuan recovery-nya.</td>
+      <td class="cell-example"><div class="example-scenario">Contoh</div><div class="example-text">Traffic dinaikkan terus hingga server mulai error — QA mencatat di angka berapa concurrent user sistem mulai crash dan apakah aplikasi bisa restart sendiri.</div></td>
+    </tr>
+
+    <tr data-cat="nonfunctional">
+      <td class="cell-name"><div class="row-num">14</div><div class="test-name">Security Testing</div><div class="test-en">Security / Pentest</div></td>
+      <td class="cell-cat"><span class="cat-tag cat-nonfunctional">Non-Functional</span></td>
+      <td class="cell-def">Pengujian untuk mengidentifikasi celah keamanan, vulnerability, dan potensi ancaman pada sistem.</td>
+      <td class="cell-goal">Melindungi data user dan sistem dari serangan seperti SQL injection, XSS, dan unauthorized access.</td>
+      <td class="cell-example"><div class="example-scenario">Contoh</div><div class="example-text">QA mencoba memasukkan <code>' OR '1'='1</code> di field login — sistem yang aman harus menolak input tersebut dan tidak memberikan akses.</div></td>
+    </tr>
+
+    <tr data-cat="nonfunctional">
+      <td class="cell-name"><div class="row-num">15</div><div class="test-name">Usability Testing</div><div class="test-en">UX Test</div></td>
+      <td class="cell-cat"><span class="cat-tag cat-nonfunctional">Non-Functional</span></td>
+      <td class="cell-def">Pengujian dengan melibatkan user nyata untuk mengevaluasi seberapa mudah dan intuitif sistem digunakan.</td>
+      <td class="cell-goal">Mengidentifikasi hambatan UX yang membuat user kebingungan atau frustasi saat menggunakan aplikasi.</td>
+      <td class="cell-example"><div class="example-scenario">Contoh</div><div class="example-text">5 orang diminta menyelesaikan tugas "beli produk dan checkout" tanpa panduan — QA mengamati di mana mereka berhenti atau melakukan kesalahan, lalu melaporkan hambatan UX.</div></td>
+    </tr>
+
+    <tr data-cat="nonfunctional">
+      <td class="cell-name"><div class="row-num">16</div><div class="test-name">Compatibility Testing</div><div class="test-en">Cross-platform Test</div></td>
+      <td class="cell-cat"><span class="cat-tag cat-nonfunctional">Non-Functional</span></td>
+      <td class="cell-def">Pengujian apakah aplikasi berjalan dengan benar di berbagai browser, OS, device, dan resolusi layar.</td>
+      <td class="cell-goal">Memastikan pengalaman user konsisten di semua platform yang didukung.</td>
+      <td class="cell-example"><div class="example-scenario">Contoh</div><div class="example-text">Halaman checkout ditest di Chrome, Firefox, Safari, dan Samsung Internet — ditemukan bug: tombol "Bayar" tidak muncul di Safari iOS karena masalah CSS.</div></td>
+    </tr>
+
+    <tr data-cat="nonfunctional">
+      <td class="cell-name"><div class="row-num">17</div><div class="test-name">Accessibility Testing</div><div class="test-en">a11y Test</div></td>
+      <td class="cell-cat"><span class="cat-tag cat-nonfunctional">Non-Functional</span></td>
+      <td class="cell-def">Pengujian apakah aplikasi dapat digunakan oleh semua orang, termasuk penyandang disabilitas (tunanetra, tunarungu, dll).</td>
+      <td class="cell-goal">Memastikan aplikasi memenuhi standar aksesibilitas (WCAG) dan inklusif untuk semua user.</td>
+      <td class="cell-example"><div class="example-scenario">Contoh</div><div class="example-text">QA menggunakan screen reader (NVDA) untuk menavigasi halaman login — memverifikasi bahwa setiap form field memiliki label yang dapat dibaca oleh screen reader.</div></td>
+    </tr>
+
+    <!-- ── STRUCTURAL ── -->
+    <tr data-cat="structural">
+      <td class="cell-name"><div class="row-num">18</div><div class="test-name">White Box Testing</div><div class="test-en">Glass Box / Clear Box</div></td>
+      <td class="cell-cat"><span class="cat-tag cat-structural">Structural</span></td>
+      <td class="cell-def">Pengujian yang dilakukan dengan pengetahuan penuh tentang struktur internal kode — tester bisa melihat source code.</td>
+      <td class="cell-goal">Memastikan semua jalur logika kode (code path, branch, condition) sudah dieksekusi dan ditest.</td>
+      <td class="cell-example"><div class="example-scenario">Contoh</div><div class="example-text">Developer menulis unit test yang mengcover semua branch dalam fungsi validasi — termasuk kondisi if/else dan edge case nilai null atau kosong.</div></td>
+    </tr>
+
+    <tr data-cat="structural">
+      <td class="cell-name"><div class="row-num">19</div><div class="test-name">Black Box Testing</div><div class="test-en">Behavioral Test</div></td>
+      <td class="cell-cat"><span class="cat-tag cat-structural">Structural</span></td>
+      <td class="cell-def">Pengujian tanpa pengetahuan tentang internal kode — tester hanya mengetahui input dan output yang diharapkan.</td>
+      <td class="cell-goal">Memverifikasi behavior sistem dari perspektif user, berdasarkan requirement dan spesifikasi.</td>
+      <td class="cell-example"><div class="example-scenario">Contoh</div><div class="example-text">QA mentest fitur transfer bank tanpa tahu cara kode backend bekerja — hanya memasukkan nominal dan memverifikasi apakah saldo berkurang dan penerima menerima uang.</div></td>
+    </tr>
+
+    <!-- ── REGRESSION ── -->
+    <tr data-cat="regression">
+      <td class="cell-name"><div class="row-num">20</div><div class="test-name">Regression Testing</div><div class="test-en">Regression Test</div></td>
+      <td class="cell-cat"><span class="cat-tag cat-regression">Regression</span></td>
+      <td class="cell-def">Pengujian ulang terhadap fitur-fitur yang sudah ada setelah terjadi perubahan kode untuk memastikan tidak ada yang rusak.</td>
+      <td class="cell-goal">Mencegah bug baru muncul di area yang tidak berkaitan dengan perubahan yang dilakukan.</td>
+      <td class="cell-example"><div class="example-scenario">Contoh</div><div class="example-text">Developer update fitur pencarian produk — QA menjalankan regression test pada fitur cart, checkout, dan login untuk memastikan perubahan tersebut tidak membreak fitur lain.</div></td>
+    </tr>
+
+    <tr data-cat="regression">
+      <td class="cell-name"><div class="row-num">21</div><div class="test-name">End-to-End Testing</div><div class="test-en">E2E Test</div></td>
+      <td class="cell-cat"><span class="cat-tag cat-regression">Regression</span></td>
+      <td class="cell-def">Pengujian keseluruhan alur bisnis dari awal hingga akhir, mensimulasikan pengalaman nyata seorang user.</td>
+      <td class="cell-goal">Memastikan seluruh alur bisnis berjalan dengan benar dari perspektif user secara end-to-end.</td>
+      <td class="cell-example"><div class="example-scenario">Contoh</div><div class="example-text">Test otomatis menjalankan skenario: buka aplikasi → register akun baru → verifikasi email → login → order produk → bayar → cek status order — semua step harus berhasil.</div></td>
+    </tr>
+
+    <!-- ── MAINTENANCE ── -->
+    <tr data-cat="maintenance">
+      <td class="cell-name"><div class="row-num">22</div><div class="test-name">Retesting</div><div class="test-en">Bug Verification</div></td>
+      <td class="cell-cat"><span class="cat-tag cat-maintenance">Maintenance</span></td>
+      <td class="cell-def">Pengujian ulang yang dilakukan khusus untuk memverifikasi bahwa bug yang dilaporkan sebelumnya sudah benar-benar diperbaiki.</td>
+      <td class="cell-goal">Memastikan fix yang dilakukan developer sudah menyelesaikan bug sesuai yang dilaporkan.</td>
+      <td class="cell-example"><div class="example-scenario">Contoh</div><div class="example-text">Bug BUG-101 "harga produk tampil Rp0 di halaman detail" sudah difix — QA menjalankan ulang langkah reproduksi asli dan memverifikasi harga kini tampil dengan benar.</div></td>
+    </tr>
+
+  </tbody>
+</table>
+</div>
+
+<div class="legend">
+  <span class="legend-title">Legenda:</span>
+  <div class="legend-item"><span class="legend-dot" style="background:#dbeafe"></span>Functional</div>
+  <div class="legend-item"><span class="legend-dot" style="background:#fef3c7"></span>Non-Functional</div>
+  <div class="legend-item"><span class="legend-dot" style="background:#f3e8ff"></span>Structural</div>
+  <div class="legend-item"><span class="legend-dot" style="background:#dcfce7"></span>Regression</div>
+  <div class="legend-item"><span class="legend-dot" style="background:#fce7f3"></span>Maintenance</div>
+</div>
+
+<p class="footer-note">
+  Catatan: Beberapa tipe testing dapat tumpang tindih kategori tergantung konteks penggunaannya. Misalnya, E2E Testing bisa bersifat functional sekaligus regression. Kategorisasi di atas mengikuti pendekatan yang paling umum digunakan di industri.
+</p>
+
+<script>
+  const btns = document.querySelectorAll('.filter-btn');
+  const rows = document.querySelectorAll('#main-table tbody tr');
+  const countEl = document.getElementById('row-count');
+
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      btns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const cat = btn.dataset.cat;
+      let count = 0;
+      rows.forEach(row => {
+        const match = cat === 'all' || row.dataset.cat === cat;
+        row.classList.toggle('hidden', !match);
+        if (match) count++;
+      });
+      countEl.textContent = count;
+    });
+  });
+</script>
+</body>
+</html>

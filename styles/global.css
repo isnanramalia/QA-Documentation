@@ -1,0 +1,50 @@
+:root {
+  --ink:     #0f1117;
+  --paper:   #f5f2eb;
+  --accent:  #e84b3a;
+  --accent2: #2563eb;
+  --muted:   #6b6b6b;
+  --line:    #d4cfc5;
+  --tag-bg:  #0f1117;
+  --tag-txt: #f5f2eb;
+}
+
+* { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+}
+
+@media (max-width: 700px) {
+  header, .filter-bar, .table-wrap, .legend, .footer-note { 
+    padding-left: 20px; 
+    padding-right: 20px; 
+  }
+  .footer-note { 
+    margin: 0 20px; 
+  }
+}
+
+@media (max-width: 500px) {
+  .logo { 
+    font-size: 48px; 
+  }
+  h1 { 
+    font-size: 28px; 
+  }
+  .doc-card { 
+    padding: 24px; 
+  }
+}
